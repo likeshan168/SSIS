@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm", "WinForm\WinForm.csproj", "{B1A666B5-1632-4CB1-B1D6-82D920AF83FF}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "demo", "demo\demo.dtproj", "{36C285CA-CDA9-428E-93F8-3964B2144F44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1A666B5-1632-4CB1-B1D6-82D920AF83FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A666B5-1632-4CB1-B1D6-82D920AF83FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A666B5-1632-4CB1-B1D6-82D920AF83FF}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A666B5-1632-4CB1-B1D6-82D920AF83FF}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{B1A666B5-1632-4CB1-B1D6-82D920AF83FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A666B5-1632-4CB1-B1D6-82D920AF83FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C285CA-CDA9-428E-93F8-3964B2144F44}.Debug|Any CPU.ActiveCfg = Development
+		{36C285CA-CDA9-428E-93F8-3964B2144F44}.Debug|Any CPU.Build.0 = Development
+		{36C285CA-CDA9-428E-93F8-3964B2144F44}.Development|Any CPU.ActiveCfg = Development
+		{36C285CA-CDA9-428E-93F8-3964B2144F44}.Development|Any CPU.Build.0 = Development
+		{36C285CA-CDA9-428E-93F8-3964B2144F44}.Release|Any CPU.ActiveCfg = Development
+		{36C285CA-CDA9-428E-93F8-3964B2144F44}.Release|Any CPU.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,546 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/8/2016 9:15:21 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="APCL2325PK2BB5Z"
+  DTS:CreatorName="APAC\LIK41"
+  DTS:DTSID="{6FB8347A-3D55-46A4-AC50-374C76003FCA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.1100.286"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{AAAE79D7-497D-48D5-99AA-CB174CE3C18E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.108.68.118.test.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6C618EAA-A12F-4592-B638-B666B82996C8}"
+      DTS:ObjectName="10.108.68.118.test.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.108.68.118;User ID=sa;Initial Catalog=test;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA//FxdaBTkkm7w/i0yNsnDQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACZOgyAZ6CDWDfkK2hqLt8AAAAAAASAAACgAAAAEAAAAK7t3bv1HKaniO5km7BldpsIAAAAoMFcDc3lPvUUAAAA/0Kz/6dvRMGXVq+nTEnT5sz/nJY</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[平面文件连接管理器]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{491563F2-8B57-4D88-B520-7487F7D96325}"
+      DTS:ObjectName="平面文件连接管理器">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2052"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="936"
+          DTS:ConnectionString="C:\Users\LIK41\Desktop\test\data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="类别编号"
+              DTS:DTSID="{C7B0F31B-DFF2-4C73-BCCF-BB84B0D049A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="产品编号"
+              DTS:DTSID="{A6BAFB3C-3FBC-4F25-B72A-D1E2B2BB3104}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="销售额"
+              DTS:DTSID="{37F08F77-572C-477F-9FFD-0555FACBAE98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="日期"
+              DTS:DTSID="{72141EAC-B02C-4DEE-A797-A68CB2FFD913}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{82E3E1DC-E202-4896-919B-CA32A74F82E6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="txtFile">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach 循环容器"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach 循环容器"
+      DTS:DTSID="{756BDC1C-C040-4CFE-9CA4-D92B05BAB522}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach 循环容器">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{3E4BAE31-60CC-4419-AFBB-7A8A35E0D494}"
+        DTS:ObjectName="{3E4BAE31-60CC-4419-AFBB-7A8A35E0D494}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\LIK41\Desktop\test" />
+            <FEFEProperty
+              FileSpec="*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach 循环容器\数据流任务"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{9A670566-32DF-4B9F-989C-5657B472FE79}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="数据流任务"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标"
+                  componentClassID="Microsoft.SQLServerDestination"
+                  contactInfo="SQL Server 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;5"
+                  description="SQL Server 目标"
+                  name="SQL Server 目标"
+                  version="5">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.String"
+                      description="要将数据复制到的数据库对象的名称。"
+                      expressionType="Notify"
+                      name="BulkInsertTableName">[dbo].[Sales]</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指定在数据复制操作过程中检查目标对象的所有约束。对应于大容量插入 CHECK_CONSTRAINTS 选项。"
+                      name="BulkInsertCheckConstraints">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定要复制的首行行号。对应于大容量插入 FIRSTROW 选项。"
+                      expressionType="Notify"
+                      name="BulkInsertFirstRow">-1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指定在数据复制过程中将执行针对目标对象定义的所有插入触发器。对应于大容量插入 FIRE_TRIGGERS 选项。"
+                      name="BulkInsertFireTriggers">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。相当于大容量插入命令中的 KEEPIDENTITY 选项。"
+                      name="BulkInsertKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值复制到目标。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="BulkInsertKeepNulls">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定要复制的最后一行的行号。对应于大容量插入 LASTROW 选项。"
+                      expressionType="Notify"
+                      name="BulkInsertLastRow">-1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定最多允许出现多少个语法错误和编译错误；当错误数超过此值时，数据复制操作将取消。无法复制的每一行都将忽略，并计为一个错误。对应于大容量插入 MAXERRORS 选项。"
+                      name="BulkInsertMaxErrors">-1</property>
+                    <property
+                      dataType="System.String"
+                      description="指定如何对要复制的数据进行排序。对应于大容量插入 ORDER 选项。"
+                      expressionType="Notify"
+                      name="BulkInsertOrder"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指定在数据复制操作期间获取表级锁。对应于大容量插入 TABLOCK 选项。"
+                      name="BulkInsertTablock">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当没有要插入的数据时 SQL 目标适配器等待多少秒后终止。超时值为 0 表示 SQL 目标适配器不会超时。"
+                      expressionType="Notify"
+                      name="Timeout">30</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。"
+                      name="MaxInsertCommitSize">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[10.108.68.118.test.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[10.108.68.118.test.sa]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入]"
+                      hasSideEffects="true"
+                      name="SQL Server 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].Columns[类别编号]"
+                          cachedDataType="i4"
+                          cachedName="类别编号"
+                          externalMetadataColumnId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].ExternalColumns[CategoryId]"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[类别编号]" />
+                        <inputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].Columns[产品编号]"
+                          cachedDataType="i4"
+                          cachedName="产品编号"
+                          externalMetadataColumnId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].ExternalColumns[ProductCode]"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[产品编号]" />
+                        <inputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].Columns[销售额]"
+                          cachedDataType="numeric"
+                          cachedName="销售额"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].ExternalColumns[SaleAmount]"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[销售额]" />
+                        <inputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].Columns[日期]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="日期"
+                          externalMetadataColumnId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].ExternalColumns[SaleDate]"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[日期]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].ExternalColumns[CategoryId]"
+                          dataType="i4"
+                          name="CategoryId" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].ExternalColumns[ProductCode]"
+                          dataType="i4"
+                          name="ProductCode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].ExternalColumns[SaleAmount]"
+                          dataType="numeric"
+                          name="SaleAmount"
+                          precision="28"
+                          scale="10" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入].ExternalColumns[SaleDate]"
+                          dataType="dbTimeStamp"
+                          name="SaleDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Foreach 循环容器\数据流任务\平面文件源"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="平面文件源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;1"
+                  description="平面文件源"
+                  localeId="2052"
+                  name="平面文件源"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="指定是否将长度为 0 的列视为 Null。"
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含该文件名的输出列的名称。如果未指定名称，则不会生成包含该文件名的输出列。"
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach 循环容器\数据流任务\平面文件源.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[平面文件连接管理器]"
+                      connectionManagerRefId="Package.ConnectionManagers[平面文件连接管理器]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出]"
+                      name="平面文件源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[类别编号]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].ExternalColumns[类别编号]"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[类别编号]"
+                          name="类别编号"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示数据是否为二进制格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[产品编号]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].ExternalColumns[产品编号]"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[产品编号]"
+                          name="产品编号"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示数据是否为二进制格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[销售额]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].ExternalColumns[销售额]"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[销售额]"
+                          name="销售额"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示数据是否为二进制格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[日期]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].ExternalColumns[日期]"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].Columns[日期]"
+                          name="日期"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示该列是否使用更快、不分区域设置的分析例程。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指示数据是否为二进制格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].ExternalColumns[类别编号]"
+                          dataType="i4"
+                          name="类别编号" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].ExternalColumns[产品编号]"
+                          dataType="i4"
+                          name="产品编号" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].ExternalColumns[销售额]"
+                          dataType="numeric"
+                          name="销售额"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出].ExternalColumns[日期]"
+                          dataType="dbTimeStamp"
+                          name="日期" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源错误输出]"
+                      isErrorOut="true"
+                      name="平面文件源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源错误输出].Columns[平面文件源错误输出列]"
+                          codePage="936"
+                          dataType="text"
+                          description="平面文件源错误输出列"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源错误输出].Columns[平面文件源错误输出列]"
+                          name="平面文件源错误输出列" />
+                        <outputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach 循环容器\数据流任务.Paths[平面文件源输出]"
+                  endId="Package\Foreach 循环容器\数据流任务\SQL Server 目标.Inputs[SQL Server 目标输入]"
+                  name="平面文件源输出"
+                  startId="Package\Foreach 循环容器\数据流任务\平面文件源.Outputs[平面文件源输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{1907BA7A-22CC-496A-BA74-F344EFF2D019}"
+          DTS:ObjectName="{1907BA7A-22CC-496A-BA74-F344EFF2D019}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::txtFile" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Foreach 循环容器\数据流任务"
+          TopLeft="92.9999892711644,49.3571351243529" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="341,161"
+          Size="341,204"
+          Id="Package\Foreach 循环容器"
+          TopLeft="176.666659646564,59.428568392384" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach 循环容器\数据流任务">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,78"
+          Id="Package\Foreach 循环容器\数据流任务\平面文件源"
+          TopLeft="184.666659547223,56.571425962205" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Foreach 循环容器\数据流任务\SQL Server 目标"
+          TopLeft="381.666651500596,231.214273901619" />
+        <EdgeLayout
+          Id="Package\Foreach 循环容器\数据流任务.Paths[平面文件源输出]"
+          TopLeft="254.166659547223,134.571425962205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="211.999991953373,96.6428479394139"
+              Start="0,0"
+              End="211.999991953373,89.1428479394139">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.3214239697069" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.3214239697069"
+                    Point2="0,48.3214239697069"
+                    Point3="4,48.3214239697069" />
+                  <mssgle:LineSegment
+                    End="207.999991953373,48.3214239697069" />
+                  <mssgle:CubicBezierSegment
+                    Point1="207.999991953373,48.3214239697069"
+                    Point2="211.999991953373,48.3214239697069"
+                    Point3="211.999991953373,52.3214239697069" />
+                  <mssgle:LineSegment
+                    End="211.999991953373,89.1428479394139" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach 循环容器\数据流任务\SQL Server 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
