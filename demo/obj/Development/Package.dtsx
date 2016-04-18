@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/8/2016 9:15:21 AM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{3094C28B-98B6-4F0E-94F9-60DB1C4EBBF3}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{1B71E7FA-57E3-4E36-B8D8-540A9E072502}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA//FxdaBTkkm7w/i0yNsnDQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAh2XBoKSs+vMyAk0QhXvnoAAAAAASAAACgAAAAEAAAABX2/UWlt8zTs9mqLn+/RNkgAAAA3ZYluiwfH3ZefcL7TK+GX/PXaicuVZ6EUB1OHIACGhIUAAAAsVbQAyceRlUS/b1BP78em289iZY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA//FxdaBTkkm7w/i0yNsnDQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC7krPqSq3r+xShpqexdZo8AAAAAASAAACgAAAAEAAAAD47tKqDr2qnzc7uDDab3CAgAAAAmBO3vy0WQ+CbEYakCX6G7f/kapDSl5bHd+oOVbozkEsUAAAAV3rkdM2fvOnqp3WTba3QAlsKgy4</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -553,20 +553,21 @@
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnPostExecute]\Script Task"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Script Task"
-          DTS:DTSID="{99BCFE0D-BE36-487D-9810-AD04A545FAA8}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Send Mail Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{3d84b821-d9c1-4146-8766-948fd47fe295}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Script Task">
+          DTS:ObjectName="Send Mail Task">
           <DTS:Variables />
           <DTS:ObjectData>
-            <ScriptProject
-              Name="ST_83955f0d19184202a148e008cf835e65"
-              VSTAMajorVersion="3"
-              VSTAMinorVersion="0"
-              Language="CSharp" />
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{7C528D27-00F6-4D81-8708-CE17BBC4E62C}"
+              SendMailTask:From="likeshan168@163.com"
+              SendMailTask:To="KeShan.li@phizer.com"
+              SendMailTask:Subject="数据导入成功"
+              SendMailTask:MessageSource="Hello KeShan,&#xA;&#xA;&#xA;&#xA;The data had been imported into database successfully&#xA;&#xA;&#xA;&#xA;Thanks,&#xA;Sherman" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -638,42 +639,6 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="256,71"
-          Id="Package.EventHandlers[OnError]\Send Mail Task"
-          TopLeft="281,97" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnPostExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="145,42"
-          Id="Package.EventHandlers[OnPostExecute]\Script Task"
-          TopLeft="266,110" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnTaskFailed]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="199,63"
-          Id="Package.EventHandlers[OnTaskFailed]\Send Mail Task"
-          TopLeft="348,82" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Foreach 循环容器\数据流任务">
     <LayoutInfo>
@@ -737,5 +702,41 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="256,71"
+          Id="Package.EventHandlers[OnError]\Send Mail Task"
+          TopLeft="281,97" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnTaskFailed]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="199,63"
+          Id="Package.EventHandlers[OnTaskFailed]\Send Mail Task"
+          TopLeft="348,82" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="256,71"
+          Id="Package.EventHandlers[OnPostExecute]\Send Mail Task"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

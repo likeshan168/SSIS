@@ -1,0 +1,6 @@
+C:\Users\LIK41\Desktop\study\sftp\WinForm\conapp\bin\Debug\conapp.exe.config
+C:\Users\LIK41\Desktop\study\sftp\WinForm\conapp\bin\Debug\conapp.exe
+C:\Users\LIK41\Desktop\study\sftp\WinForm\conapp\bin\Debug\conapp.pdb
+C:\Users\LIK41\Desktop\study\sftp\WinForm\conapp\obj\Debug\conapp.csprojResolveAssemblyReference.cache
+C:\Users\LIK41\Desktop\study\sftp\WinForm\conapp\obj\Debug\conapp.exe
+C:\Users\LIK41\Desktop\study\sftp\WinForm\conapp\obj\Debug\conapp.pdb
