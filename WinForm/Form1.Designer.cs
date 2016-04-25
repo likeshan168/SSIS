@@ -33,6 +33,7 @@
             this.btnbrowser = new System.Windows.Forms.Button();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.btnExcel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -66,11 +67,22 @@
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(159, 169);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "弹出信息";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 291);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.btnbrowser);
@@ -88,6 +100,7 @@
         private System.Windows.Forms.Button btnbrowser;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

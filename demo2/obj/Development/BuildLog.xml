@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>demo2</Name>
-    <LastWriteTime>2016-04-18T04:34:52.3237231Z</LastWriteTime>
+    <LastWriteTime>2016-04-19T05:25:40.2434603Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2016-04-18T04:29:45.7734525Z</LastWriteTime>
+      <Name>PreDSInventoryDailySSISProcess.dtsx</Name>
+      <LastWriteTime>2016-04-19T05:37:36.4702187Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

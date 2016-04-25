@@ -58,5 +58,10 @@ namespace WinForm
             sheet = null;
             MessageBox.Show("生成excel成功");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("用户名或密码不正确", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
